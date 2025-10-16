@@ -1,0 +1,101 @@
+@extends('depot.master')
+@section('content')
+
+<style>
+@media screen and (max-width: 2000px){
+.btn{
+    margin-left:300px; 
+    margin-top:30px;
+}
+.box{
+
+  width:400px;
+  height:300px; 
+}
+
+.account{
+    margin-left:450px; 
+    width:500px;
+}
+}
+@media screen and (max-width: 500px){
+
+  .box{
+  margin-left:0px;
+  margin-right:10px;
+  width:350px; 
+  height:400px; 
+}
+.btn{
+    margin-left:220px; 
+   
+}
+
+.account{
+    margin-left:50px; 
+    width:500px;
+}
+.pull-left{
+    margin-top:60px;
+}
+}
+
+</style>
+
+<form  method="POST" action="{{ route('payment.store') }}" enctype="multipart/form-data" class = "account">
+ @csrf
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="pull-left">
+            <h2 style="color: white; border:1px; border-radius:5px;width:350px; height:80px; text-align:center; background-color:rgba(19, 14, 65, 0.6)">Payment Management</h2>
+        </div>
+       
+</div>
+</div>
+
+
+<div class="box" style="background-color: white; border-radius:10px; border: 1px; padding:10px;">
+<b> Price</b><br>
+
+                <b style = "margin-left:30px;">Card Payment:</b>  Rs 500
+    
+   
+     <div >
+	  <b>Payment Station:</b>
+
+      @foreach($cardforms as $cardform)
+
+      {{$cardform->pickup_station}}
+
+      @endforeach
+
+      </div>               
+
+      <input type="hidden"  value="{{$cardform->id}}" id="cardform_id" name="cardform_id" >
+      <input type="hidden"  value="{{$cardform->form_id}}" id="form_id" name="form_id" >
+
+  <h5 style="color: white; border:1px; border-radius:5px; width:200px; height:30px; text-align:center; background-color:#7d0000; margin-left:100px; margin-top:10px;">*After Payment</h5><br>
+  <div class = "row">
+  <div class ="col-md-6">
+         <b> Add Receipt Number:  </b></div>
+         <div class ="col-md-3">
+        <input type = "number" id="receipt" name="receipt" style= "border: none; border-color: transparent; border-bottom: 1px solid black; width:150px"><br> 
+</div>
+</div>
+
+<div class = "row">
+  <div class ="col-md-6">
+        <b> Paid Date: </b></div>
+        <div class ="col-md-3">
+        <input type = "date" id="date" name="date" style= "border: none; border-color: transparent; border-bottom: 1px solid black;width:150px"> 
+
+</div>
+</div>
+
+                
+<button type="submit" class="btn btn-dark">Submit</button>
+</div>
+
+</form>
+@endsection
