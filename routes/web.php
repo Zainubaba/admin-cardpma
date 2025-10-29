@@ -11,6 +11,7 @@ use App\Http\Controllers\PmaController;
 use App\Http\Controllers\AddOrgController;
 use App\Http\Controllers\InstituteController;
 use App\Http\Controllers\CaptchaController;
+use App\Http\Controllers\TranslationController;
 use Illuminate\Http\Request;
 
 
@@ -31,6 +32,10 @@ Route::post('/captcha/validate', [CaptchaController::class, 'validateCaptcha'])-
 Route::POST ('/get-metro-stops-by-district', [App\Http\Controllers\AdminController::class, 'getMetroStops']);
 
 Route::get('/get-basic-info-by-cnic/{cnic}', [App\Http\Controllers\CardformController::class,'getinfobycnic']);
+
+//Translation routes
+Route::get('/', [TranslationController::class,'index']);
+Route::get('/translation', [TranslationController::class,'translation'])->name('change.translate');
 
 
 Route::get('/maindashboard', [App\Http\Controllers\CardformController::class,'dashboard']);
@@ -749,6 +754,11 @@ Route::get('/log', function () {
 Route::get('/student', function () {
     return view('welcome');
 });
+
+Route::get('/student1', function () {
+    return view('welcome1');
+});
+
 Route::get('/registeration', function () {
     return view('registeration');
 });

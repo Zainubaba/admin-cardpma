@@ -12,6 +12,34 @@
     <title>PMA</title>
     <style>
 
+        /* --- Fix Bootstrap 4 breaking custom checkbox toggles --- */
+.lang-toggle .toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+}
+
+/* Makes sure Bootstrap doesn’t block input clicks */
+.lang-toggle .toggle input[type="checkbox"] {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  z-index: 9999 !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  pointer-events: auto !important;
+}
+
+/* Other CSS */
+
         .captcha-container { margin-bottom: 1.5rem; text-align: center; }
     .captcha-container img { border: 1px solid #ccc; border-radius: 0.5rem; }
     .captcha-container button { margin-left: 0.5rem; padding: 0.25rem 0.5rem; background: #23aab5; color: white; border: none; border-radius: 0.25rem; cursor: pointer; }
@@ -70,8 +98,12 @@
 
 
 <body>
+
+    {{-- Language toggle --}}
+ <x-language-toggle />
     <header>
 
+        
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" >
@@ -80,9 +112,9 @@
                         style="margin-top:-25px"></a>
                 <a class=" ml-auto head " style="color:white; margin-top:-20px;" href="#">
 
-                    <span class="heading"> PUNJAB MASSTRANSIT AUTHORITY</span>
+                    <span class="heading"> {{ __('message.PMA') }}</span>
                     <br>
-                    <p style="font-size:15px;">GOVERNMENT OF THE PUNJAB</p>
+                    <p style="font-size:15px;">{{ __('message.GOP') }}</p>
 
                 </a>
                 </div>
@@ -101,8 +133,8 @@
                     <a style="color: white;" class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li> -->
                 @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a style="color: white;" class="nav-link" data-toggle="modal" data-target="#regModal" >{{ __('Register') }}</a>
+                    <li class="nav-item" style="margin-top: 70px;">
+                        <a style="color: white;" class="nav-link" data-toggle="modal" data-target="#regModal" >{{ __('message.Register') }}</a>
                     </li>
                 @endif
             @else
@@ -140,12 +172,12 @@
 
                     <div class="col-lg-5 col-md-6 col-sm-12 bg-light" style="height: 430px; margin-top:-50px; border-radius: 37px;">
                         <h1 style="text-align: center; font-weight: 900; font-size: 34px; color:rgb(68, 68, 68); margin-top:20px;">
-                            Login
+                            {{ __('message.Login') }}
                         </h1>
 
                         {{-- CNIC --}}
                         <div class="form-group" style="margin-top: 35px;">
-                            <label for="cnic">{{ __('CNIC :') }}</label>
+                            <label for="cnic">{{ __('message.CNIC') }} :</label>
                             <input id="cnic"
                                    type="text"
                                    name="cnic"
@@ -163,7 +195,7 @@
 
                         {{-- Password --}}
                         <div class="form-group">
-                            <label for="password">{{ __('Password :') }}</label>
+                            <label for="password">{{ __('message.Password') }} :</label>
                             <input id="password"
                                    type="password"
                                    name="password"
@@ -198,7 +230,7 @@
 
                             <button type="submit" style="color:white; text-align:center; background-color:#110b46; width:100px; border-radius: 10px;"  class="btn " >
                                 <b>
-                                    Submit
+                                    {{ __('message.Submit') }}
                                 </b>
                             </button>
                         </div>
@@ -215,19 +247,19 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title w-100 text-center" id="eligibilityModalLabel">Registration Announcement</h5>
+                    <h5 class="modal-title w-100 text-center" id="eligibilityModalLabel">{{ __('message.Registration_Announcement') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body px-5" style="background-color:lightgreen;">
                     <ul>
-                        <li>Registration will be re-open after formal announcement.</li>
+                        <li>{{ __('message.Registration_formalannouncement') }}</li>
 
                     </ul>
                 </div>
                 <div class="modal-footer" style="background-color:lightgreen;">
-                    <button type="button" class="btn btn-sm" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-sm" data-dismiss="modal">{{ __('message.OK') }}</button>
                 </div>
             </div>
         </div>
@@ -242,6 +274,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
+
 
 </html>
 

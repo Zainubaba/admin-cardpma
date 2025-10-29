@@ -154,7 +154,7 @@
         @if (Route::has('Institute.newUser'))
             <li class="nav-item">
                 <a class="nav-link bg-white text-dark px-4 py-3 rounded" href="{{ route('Institute.newUser') }}">
-                    {{ __('Register') }}
+                    {{ __('message.Register') }}
                 </a>
             </li>
         @endif

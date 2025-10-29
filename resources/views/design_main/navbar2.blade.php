@@ -134,27 +134,27 @@
                <ul class="navbar-nav ml-auto">
     <li class="nav-item">
         <a class="nav-link bg-white text-dark px-4 py-3 rounded" data-toggle="modal" data-target="#eligibilityModal">
-            Eligibility Criteria
+            {{ __('message.Elig') }}
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link bg-white text-dark px-4 py-3 rounded" href="{{ url('/check-cnic') }}">
-            Track your ID
+            {{ __('message.Track_ID') }}
         </a>
     </li>
 
     @guest
         <li class="nav-item">
             <a class="nav-link bg-white text-dark px-4 py-3 rounded" href="{{ route('login') }}">
-                {{ __('Login') }}
+                {{ __('message.Login') }}
             </a>
         </li>
 
         @if (Route::has('register'))
             <li class="nav-item">
                 <a class="nav-link bg-white text-dark px-4 py-3 rounded" data-toggle="modal" data-target="#regModal">
-                    {{ __('Register') }}
+                    {{ __('message.Register') }}
                 </a>
             </li>
         @endif
@@ -191,16 +191,16 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title w-100 text-center" id="eligibilityModalLabel">Eligibility Criteria</h5>
+                    <h5 class="modal-title w-100 text-center" id="eligibilityModalLabel">{{ __('message.Elig') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body px-5" style="background-color:lightgreen;">
                     <ul>
-                        <li>Must be studying in a Punjab institute, technical school, or madrassa</li>
-                        <li>Must have a Punjab domicile</li>
-                        <li>Must have completed education from 6th grade up to 18 years of education (or equivalent)</li>
+                        <li>{{ __('message.Elig_modal1') }}</li>
+                        <li>{{ __('message.Elig_modal2') }}</li>
+                        <li>{{ __('message.Elig_modal3') }}</li>
                     </ul>
                 </div>
                 <div class="modal-footer" style="background-color:lightgreen;">
@@ -213,19 +213,19 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title w-100 text-center" id="eligibilityModalLabel">Registration Announcement</h5>
+                    <h5 class="modal-title w-100 text-center" id="eligibilityModalLabel">{{ __('message.Registration_Announcement') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body px-5" style="background-color:lightgreen;">
                     <ul>
-                        <li>Registration will be re-open after formal announcement.</li>
+                        <li>{{ __('message.Registration_formalannouncement') }}</li>
 
                     </ul>
                 </div>
                 <div class="modal-footer" style="background-color:lightgreen;">
-                    <button type="button" class="btn btn-sm" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-sm" data-dismiss="modal">{{ __('message.OK') }}</button>
                 </div>
             </div>
         </div>

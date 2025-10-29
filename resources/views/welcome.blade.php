@@ -2,6 +2,9 @@
 @section('content')
 
 <style>
+
+ 
+
   /* media querry */
   @media screen and (max-width:600px){
     .fc h1 span a{
@@ -47,18 +50,23 @@ body {
 
 <body>
 
-
+ {{-- Language toggle --}}
+ <x-language-toggle />
 
  <div class="container-fluid px-5">
           <div class="row">
             <div class="fc col-md-7 col-sm-3 " style="color:rgb(255, 255, 255);">
 
-                <h1  style="text-align: center"><span style="font-weight:750;  "> <a style="background-color:#141c84; "> PERSONALIZED STUDENT'S T CASH CARDS</a>
-                    <br>BY PUNJAB MASSTRANSIT
-                        <br> AUTHORITY
+                <h1  style="text-align: center"><span style="font-weight:750;  "> <a style="background-color:#141c84; "> 
+                  {{-- PERSONALIZED STUDENT'S T CASH CARDS --}}
+                {{ __('message.card_title') }}</a>
+                    <br> {{ __('message.By_PMA') }}
+                    {{-- BY PUNJAB MASSTRANSIT --}}
+                        <br> 
+                        {{-- AUTHORITY --}}
                         </h1></span>
                     </a>
-                    <h6 style="text-align:center; margin-top:40px;">GOVERNMENT OF THE PUNJAB</h6>
+                    <h6 style="text-align:center; margin-top:40px;">{{ __('message.GOP') }}</h6>
             </div>
 
             <div class="col-md-5 col-sm-12">
@@ -113,6 +121,13 @@ body {
 </div>
 </div>
 </body>
+
+{{-- <script>
+document.querySelector('.toggle-class').addEventListener('change', function() {
+    this.value = this.checked ? '1' : '0';
+    document.getElementById('langForm').submit();
+});
+</script> --}}
 
  @endsection
 
