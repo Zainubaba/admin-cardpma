@@ -756,7 +756,7 @@ Route::get('/student', function () {
 });
 
 Route::get('/student1', function () {
-    return view('welcome1');
+    return view('Institute.selectregistration');
 });
 
 Route::get('/registeration', function () {
@@ -800,7 +800,7 @@ Route::get('/code', function () {
 });
 
 Route::get('/', function () {
-    return view('Institute.selectregistration');
+    return view('welcome1');
 });
 
  Route::get('/robocall/{phoneno}/{cnic}', [App\Http\Controllers\AdminController::class, 'robocall']);
