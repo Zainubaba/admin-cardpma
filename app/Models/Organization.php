@@ -19,5 +19,12 @@ public function district() {
 public function tehsil() {
     return $this->belongsTo(Tehsil::class);
 }
+public function eduLevel()
+{
+    return $this->belongsTo(Edu::class, 'edu_level');
+}
+public function hod() {
+    return $this->belongsTo(Hod::class);
+}
 
 }

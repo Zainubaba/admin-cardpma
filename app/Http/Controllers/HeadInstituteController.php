@@ -62,6 +62,33 @@ class HeadInstituteController extends Controller
 
 }
 
+// public function updateUser(Request $request)
+//     // dd($request->all());
+
+//    $input = $request->validate([
+//         'id' => '',
+//         'district_id' => '',
+//         'tehsil_id' => '',
+//         'institute_type' => '',
+//         'edu_level' => '',
+//         'org_name' => '',
+//         'hod_id' => '',
+
+
+//     ]);
+
+//     $input['org_name'] = $request->emis .' | '.$request->org_name;
+
+//                 $data = Organization::create($input);
+
+
+//     return view('head_institute.addusers', compact()); 
+    
+//     // response()->json(['message' => 'Institute added successfully']);
+
+// }
+
+
 
     public function dashboard()
     {

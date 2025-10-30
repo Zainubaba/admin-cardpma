@@ -744,6 +744,7 @@ Route::get('/get-handedover-users-by-institute', function (Request $request) {
 
 
 
+
 Route::get('/reg', function () {
     return view('auth.reg');
 });
@@ -961,6 +962,12 @@ Route::post('/check-cnic-ajax', [AdminController::class, 'checkCnicAjax'])->name
 
 Route::middleware(['auth'])->prefix('institute')->name('institute.')->group(function () {
     Route::get('/manage-users', [AddOrgController::class, 'index'])->name('users.index');
+    
+Route::get('/addusers', [AddOrgController::class, 'addUsers']);
+Route::get('/addorg', [AddOrgController::class, 'addOrg']);
+Route::get('/manageusers', [AddOrgController::class, 'manageUsers']);
+Route::get('/manageorg', [AddOrgController::class, 'manageOrg']);
+
     Route::post('/users', [AddOrgController::class, 'storeUser'])->name('users.store');
     Route::delete('/users/{id}', [AddOrgController::class, 'destroyUser'])->name('users.destroy');
     Route::get('/users/{id}/edit', [AddOrgController::class, 'editUser'])->name('users.edit');

@@ -67,8 +67,10 @@
                 <li class="nav-item">
                     {{-- <a href="/institute/manage-users" class="nav-link"> --}}
                          {{-- <a href="javascript:void(0);" class="nav-link" onclick="showAddUserForm()"> --}}
-                            <a href="/institute/manage-users?section=addUserSection" class="nav-link" onclick="showSection('addUserSection')">
-                        <i class="nav-icon far fa-plus-square"></i>
+                            {{-- <a href="/institute/manage-users?section=addUserSection" class="nav-link" onclick="showSection('addUserSection')"> --}}
+                            <a href="/institute/addusers" class="nav-link" onclick="showSection('addUserSection')">
+                       
+                                <i class="nav-icon far fa-plus-square"></i>
                         <p>
                         Add Users
                         </p>
@@ -77,8 +79,10 @@
 
                 <li class="nav-item">
                     {{-- <a href="" class="nav-link"> --}}
-                         <a href="/institute/manage-users?section=manageUsersSection" class="nav-link" onclick="showSection('manageUsersSection')">
-                        <i class="nav-icon far fa-plus-square"></i>
+                         {{-- <a href="/institute/manage-users?section=manageUsersSection" class="nav-link" onclick="showSection('manageUsersSection')"> --}}
+                        <a href="/institute/manageusers" class="nav-link" onclick="showSection('manageUsersSection')">
+                        
+                            <i class="nav-icon far fa-plus-square"></i>
                         <p>
                         Manage Users
                         </p>
@@ -87,8 +91,10 @@
 
                 <li class="nav-item">
                     {{-- <a href="" class="nav-link"> --}}
-                        <a href="/institute/manage-users?section=addOrganizationSection" class="nav-link" onclick="showSection('addOrganizationSection')">
-                        <i class="nav-icon far fa-plus-square"></i>
+                        {{-- <a href="/institute/manage-users?section=addOrganizationSection" class="nav-link" onclick="showSection('addOrganizationSection')"> --}}
+                        <a href="/institute/addorg" class="nav-link" onclick="showSection('addOrganizationSection')">
+                       
+                            <i class="nav-icon far fa-plus-square"></i>
                         <p>
                          Add New Organization              
                         </p>
@@ -97,8 +103,10 @@
 
                 <li class="nav-item">
                     {{-- <a href="" class="nav-link"> --}}
-                        <a href="/institute/manage-users?section=manageOrganizationsSection" class="nav-link" onclick="showSection('manageOrganizationsSection')">
-                        <i class="nav-icon far fa-plus-square"></i>
+                        {{-- <a href="/institute/manage-users?section=manageOrganizationsSection" class="nav-link" onclick="showSection('manageOrganizationsSection')"> --}}
+                        <a href="/institute/manageorg" class="nav-link" onclick="showSection('manageOrganizationsSection')">
+                       
+                            <i class="nav-icon far fa-plus-square"></i>
                         <p>
                          Manage Organizations             
                         </p>

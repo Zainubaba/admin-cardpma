@@ -5,9 +5,9 @@
 
     {{-- <h1 class="text-center my-4 font-weight-bold" style="font-size: 3rem; color:gray;">PMA DASHBOARD</h1> --}}
 
-    <div class="content-wrapper">
+    {{-- <div class="content-wrapper"> --}}
         <!-- Main content -->
-        <section class="content">
+        {{-- <section class="content"> --}}
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row">
@@ -121,14 +121,14 @@
         </div>
     </div>
 </div>
-</div>
+{{-- </div> --}}
 
-        </section>
+        {{-- </section> --}}
     </div>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    {{-- <script src="../../dist/js/adminlte.min.js"></script> --}}
     <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
+    {{-- <script src="../../dist/js/demo.js"></script> --}}
 
     <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

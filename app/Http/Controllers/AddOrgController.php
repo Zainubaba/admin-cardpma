@@ -48,6 +48,146 @@ $user = auth()->user();
     return view('head_institute.addorganization', compact('roleTwoUsers', 'organizations','allOrganizations','districts','tehsils','edu_levels','hods'));
 }
 
+
+// addUser
+
+public function addUsers() {
+   $user = auth()->user();
+
+    
+    if ($user->hod_institute) {
+        // $organizations = Organization::where('hod_id', $user->hod_institute)->latest()->get();
+        $organizations = Organization::with('district')
+    ->where('hod_id', $user->hod_institute)
+    ->latest()
+    ->get();
+    } else {
+
+        $organizations = Organization::latest()->get();
+    }
+
+    $allOrganizations = Organization::orderBy('org_name')->get();
+
+    $orgid = Organization::where('hod_id', $user->hod_institute)->pluck('id');
+
+    $roleTwoUsers = User::where('role', 2)
+    ->whereIn('hod_institute', $orgid)
+    ->get();
+      
+    // $organizations = Organization::latest()->paginate(10);
+    $districts = District::orderBy('name')->get();
+    $tehsils = Tehsil::orderBy('tehsil_name')->get();
+    $edu_levels = Edu::orderBy('name')->get();
+            $hods    = Hod::orderBy('name')->get(); 
+    return view('head_institute.addusers', compact('roleTwoUsers', 'organizations','allOrganizations','districts','tehsils','edu_levels','hods'));
+}
+
+// addOrg
+
+public function addOrg() {
+  $user = auth()->user();
+
+    
+    if ($user->hod_institute) {
+        // $organizations = Organization::where('hod_id', $user->hod_institute)->latest()->get();
+        $organizations = Organization::with('district')
+    ->where('hod_id', $user->hod_institute)
+    ->latest()
+    ->get();
+    } else {
+
+        $organizations = Organization::latest()->get();
+    }
+
+    $allOrganizations = Organization::orderBy('org_name')->get();
+
+    $orgid = Organization::where('hod_id', $user->hod_institute)->pluck('id');
+
+    $roleTwoUsers = User::where('role', 2)
+    ->whereIn('hod_institute', $orgid)
+    ->get();
+      
+    // $organizations = Organization::latest()->paginate(10);
+    $districts = District::orderBy('name')->get();
+    $tehsils = Tehsil::orderBy('tehsil_name')->get();
+    $edu_levels = Edu::orderBy('name')->get();
+            $hods    = Hod::orderBy('name')->get(); 
+    return view('head_institute.addorg', compact('roleTwoUsers', 'organizations','allOrganizations','districts','tehsils','edu_levels','hods'));
+}
+
+// manageUsers
+
+public function manageUsers() {
+    
+$user = auth()->user();
+
+    
+    if ($user->hod_institute) {
+        // $organizations = Organization::where('hod_id', $user->hod_institute)->latest()->get();
+        $organizations = Organization::with('district')
+    ->where('hod_id', $user->hod_institute)
+    ->latest()
+    ->get();
+    } else {
+
+        $organizations = Organization::latest()->get();
+    }
+
+    $allOrganizations = Organization::orderBy('org_name')->get();
+
+    $orgid = Organization::where('hod_id', $user->hod_institute)->pluck('id');
+
+    $roleTwoUsers = User::where('role', 2)
+    ->whereIn('hod_institute', $orgid)
+    ->get();
+      
+    // $organizations = Organization::latest()->paginate(10);
+    $districts = District::orderBy('name')->get();
+    $tehsils = Tehsil::orderBy('tehsil_name')->get();
+    $edu_levels = Edu::orderBy('name')->get();
+            $hods    = Hod::orderBy('name')->get(); 
+    return view('head_institute.manageusers', compact('roleTwoUsers', 'organizations','allOrganizations','districts','tehsils','edu_levels','hods'));
+}
+
+// manageOrg
+
+public function manageOrg() {
+    ini_set('memory_limit', '1024M');
+$user = auth()->user();
+
+    
+    if ($user->hod_institute) {
+        // $organizations = Organization::where('hod_id', $user->hod_institute)->latest()->get();
+        $organizations = Organization::with('district')
+    ->where('hod_id', $user->hod_institute)
+    ->latest()
+    ->get();
+    } else {
+
+        $organizations = Organization::latest()->get();
+    }
+
+    $allOrganizations = Organization::orderBy('org_name')->get();
+
+    $orgid = Organization::where('hod_id', $user->hod_institute)->pluck('id');
+
+    $roleTwoUsers = User::where('role', 2)
+    ->whereIn('hod_institute', $orgid)
+    ->get();
+      
+    // $organizations = Organization::latest()->paginate(10);
+    $districts = District::orderBy('name')->get();
+    $tehsils = Tehsil::orderBy('tehsil_name')->get();
+    $edu_levels = Edu::orderBy('name')->get();
+            $hods    = Hod::orderBy('name')->get(); 
+    return view('head_institute.manageorg', compact('roleTwoUsers', 'organizations','allOrganizations','districts','tehsils','edu_levels','hods'));
+}
+
+
+
+
+//StoreUser
+
 public function storeUser(Request $request)
 {
     $request->validate([
@@ -132,7 +272,7 @@ public function storeOrganization(Request $request)
             'created_by' => auth()->id(),
         
     ]);
-    dd($org);
+    // dd($org);
 
     return back()->with('success', 'Organization added.');
 }
