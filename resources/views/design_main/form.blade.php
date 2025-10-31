@@ -133,6 +133,14 @@
         border-radius: 25px;
     }
 
+        #cnicExpiryContainer {
+    display: none;
+    margin-left: 10px; 
+    /* flex-wrap: wrap;  */
+    justify-content: center; 
+    width: 100%; 
+}
+
     @media screen and (max-width: 991px) {
         .navbar-brand span {
             font-size: 22px;
@@ -252,13 +260,11 @@
 
                 <div class="form-row justify-content-center">
                     <div class="form-group col-md-5 mr-5">
-                        <label class="font-weight-bold">Gender <span>*</span></label>
-                        <select name="gender" id="genderDropdown" class="form-control" required>
-                            <option value="{{ $basicInfo ? $basicInfo->gender : '' }}">{{ $basicInfo ? $basicInfo->gender : 'Select Gender' }}</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
+                        <label class="font-weight-bold">Student Name <span>*</span></label>
+                        <input type="text" name="passenger_name" id="passenger_name" value="{{ $basicInfo ? $basicInfo->passenger_name : '' }}" maxlength="20" class="form-control"
+                               placeholder="Enter Your Name" required />
                     </div>
+                    
                     <div class="form-group col-md-5">
                         <label class="font-weight-bold">CNIC Type <span>*</span></label>
                         <select id="cnic_type" name="cnic_type" class="form-control" required>
@@ -269,10 +275,14 @@
                     </div>
 
                     <div class="form-group col-md-5 mr-5">
-                        <label class="font-weight-bold">Student Name <span>*</span></label>
-                        <input type="text" name="passenger_name" id="passenger_name" value="{{ $basicInfo ? $basicInfo->passenger_name : '' }}" maxlength="20" class="form-control"
-                               placeholder="Enter Your Name" required />
+                        <label class="font-weight-bold">Gender <span>*</span></label>
+                        <select name="gender" id="genderDropdown" class="form-control" required>
+                            <option value="{{ $basicInfo ? $basicInfo->gender : '' }}">{{ $basicInfo ? $basicInfo->gender : 'Select Gender' }}</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
+
                     <div class="form-group col-md-5">
                         <label class="font-weight-bold">CNIC / B-form No <span>*</span></label>
                         <input type="number" id="old_cnic" name="cnic" min="1000000000000" max="9999999999999"
@@ -281,13 +291,13 @@
                     </div>
 
                     <!-- CNIC Dates (hidden initially) -->
-                     <div id="cnicExpiryContainer"  class="form-row justify-content-center" style="display: none;">
-                            <div class="form-row">
-                    <div  class="form-group col-md-5 mr-5 ml-4" >
+                      <div id="cnicExpiryContainer" style="display: none;">  
+                        <div class="form-row">
+                       <div class="form-group col-md-5 mr-5" style="margin-left:40px">
                         <label class="font-weight-bold">CNIC Issuance Date <span>*</span></label>
                         <input type="date" name="cnic_issuance_date" class="form-control" value="{{ $basicInfo ? $basicInfo->cnic_issuance_date : '' }}">
                     </div>
-                    <div class="form-group col-md-5" >
+                    <div class="form-group col-md-5" style="margin-left:0">
                         <label class="font-weight-bold">CNIC Expiry Date <span>*</span></label>
                         <input type="date" name="cnic_expiry" id="cnic_expiry" value ="{{ $basicInfo ? $basicInfo->cnic_expiry : '' }}" class="form-control">
                     </div>

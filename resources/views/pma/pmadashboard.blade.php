@@ -150,7 +150,7 @@
 
 </style>
 
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <!-- Loader Overlay -->
     <div class="loader-overlay" id="loader">
         <div class="hourglass-loader">
@@ -398,7 +398,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    {{-- </div> --}}
 
     {{-- <script src="../../dist/js/adminlte.min.js"></script> --}}
     <!-- Removed demo.js to avoid the alert -->

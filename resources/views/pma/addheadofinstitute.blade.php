@@ -72,6 +72,15 @@
         transition: .3s;
     }
 
+       .bg-light {
+        width: 90%;  /* You can adjust this value to make it wider or narrower */
+        max-width: 1200px; /* Optionally, set a maximum width */
+        margin: 0 auto; /* Center the container horizontally */
+        border-radius: 15px; /* Rounding the corners */
+        padding: 20px; /* Adding padding inside the container */
+        background-color: white; /* Ensuring background is white */
+    }
+
     @media print {
         #print-button {
             display: none !important;
@@ -103,9 +112,9 @@
     </div>
     @endif
 
-            <div class="d-flex justify-content-center align-items-center " style="min-height: 100vh;margin-top:150px">
+            <div class="d-flex justify-content-center align-items-center " style="min-height: 100vh;margin-top:50px">
 
-                         <div class="col-md-6 col-sm-12 bg-light " style="">
+                         <div class="col-md-8 col-sm-12 bg-light " style="">
 
                         <h1
                             style="text-align: center; font-weight: 700; font-size: 34px; color:rgb(68, 68, 68); margin-top:0px;">

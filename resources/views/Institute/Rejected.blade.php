@@ -95,8 +95,8 @@
     }
 
     </style>
-    <div class="content-wrapper">
-        <section class="content">
+    {{-- <div class="content-wrapper">
+        <section class="content"> --}}
             <div class="container-fluid">
 
                 <div class="col-md-12">
@@ -115,14 +115,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            {{-- </div> --}}
 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"
                 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
             <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.1.4/js/dx.all.js"></script> -->
             <script src="https://cdn3.devexpress.com/jslib/23.1.3/js/dx.all.js"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-        </section>
+        {{-- </section> --}}
         <script>
             window.jsPDF = window.jspdf.jsPDF;
 
